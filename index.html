@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quadrature Shiny App</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Quadrature Shiny App">
+  <meta name="author" content="NVP">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="http://slidifylibraries2.googlecode.com/git/inst/libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/js/slides" 
+    src="http://slidifylibraries2.googlecode.com/git/inst/libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Quadrature Shiny App</h1>
+    <h2>Coursera Developing Data Products class</h2>
+    <p>NVP<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Purpose</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The purpose of this app is to provide an interactive environment to both estimate the integral of functions and to visualize the process to help see what is going on.  Estimates of the integrals are computed by a method known as quadrature.</p>
+
+<p>The app is deployed at <a href="http://nverno.shinyapps.io/quadrature/">http://nverno.shinyapps.io/quadrature/</a>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Quadrature</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Quadrature is a simple way to estimate integrals by summing the area of trapezoids under a curve.  This method is quite accurate when using fairly low numbers of trapezoids to estimate the integral.  As functions become more complicated (i.e curvy) more trapezoids will be required to get accurate estimates of the integral.  This app provides a nice visualization of this process.</p>
+
+<h2>Quadrature equation</h2>
+
+<p>\[ h\sum_{j=0}^{n-1} f(x_j) - \frac{h}{2} ( f(a) + f(b) )\]
+where \(h\) is the width of each trapezoid, \(n\) is the number of trapezoids, \(a\) and \(b\) are the lower and upper bounds of the integral, and \(f\) is the function being integrated.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Example</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>On the next slide we will look at an example of estimating the following integral with different numbers of trapezoids.  </p>
+
+<p>\[\int_0^{20} {0.5\cos x + 20\sin x + x^{1.5}}\]</p>
+
+<p>In the first case, an estimate using 5 trapezoids yields an estimate with an error of 0.0501265.  The second example uses 20 trapezoids and yields an estimate of the integral with an error of 0.0501687.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Estimate the integral with different numbers of trapezoids</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-2"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Purpose'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Quadrature'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Example'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Estimate the integral with different numbers of trapezoids'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="http://slidifylibraries2.googlecode.com/git/inst/libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
